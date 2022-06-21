@@ -1,18 +1,13 @@
-package tests;
+package tests.browserstack;
 import com.codeborne.selenide.CollectionCondition;
-import com.codeborne.selenide.Condition;
 import io.appium.java_client.AppiumBy;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.By;
-
-import java.util.List;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.*;
-import static com.codeborne.selenide.files.DownloadActions.click;
 import static io.qameta.allure.Allure.step;
-@Tag("android")
+
 public class HomeWorkTest extends TestBase {
     @Test
     void searchTest() {
@@ -32,4 +27,5 @@ public class HomeWorkTest extends TestBase {
                     .shouldHave(text(valueDescriptionCheck));
 
         });
-}}
+}
+}

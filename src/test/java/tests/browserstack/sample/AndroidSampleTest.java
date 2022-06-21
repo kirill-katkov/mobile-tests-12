@@ -1,4 +1,4 @@
-package tests.browserstack_samples;
+package tests.browserstack.sample;
 //
 //
 //import io.appium.java_client.MobileBy;
