@@ -11,7 +11,7 @@ import tests.TestBase;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.*;
 import static io.qameta.allure.Allure.step;
-@Tag("android")
+
 public class AndroidHomework extends TestBase {
 
 
@@ -27,6 +27,7 @@ public class AndroidHomework extends TestBase {
                         .shouldHave(CollectionCondition.sizeGreaterThan(0)));
     }
 
+    @Tag("android")
     @Test
     void searchTestMicrosoft() {
         String valueTitleCheck = "Microsoft";
@@ -47,6 +48,7 @@ public class AndroidHomework extends TestBase {
         });
     }
 
+    @Tag("android")
     @Test
     void testOnboarding(){
         $(AppiumBy.id("org.wikipedia.alpha:id/primaryTextView"))
