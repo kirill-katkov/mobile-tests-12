@@ -134,25 +134,6 @@ public class AndroidHomework extends TestBase {
 
     @Test
     @Tag("android")
-    @DisplayName("Проверка поиска")
-    @Description("Проверка поиска по тексту Appium ")
-    void searchTest() {
-        step("Skip onboarding", Selenide::back);
-
-        step("Type search", () -> {
-            $(MobileBy.AccessibilityId("Search Wikipedia")).click();
-            $(MobileBy.id("org.wikipedia.alpha:id/search_src_text"))
-                    .setValue("Appium");
-        });
-
-        step("Verify content found", () ->
-                $$(MobileBy.id("org.wikipedia.alpha:id/page_list_item_title"))
-                        .shouldHave(sizeGreaterThan(0)));
-    }
-
-
-    @Test
-    @Tag("android")
     @DisplayName("Проверка текста на стартовом экране")
     @Description("Проверка текста на стартовом экране. Экран после онбординга")
     void checkTextStartScreen() {
