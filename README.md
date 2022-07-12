@@ -1,6 +1,6 @@
 # Дипломный проект по автоматизации тестирования мобильного приложения Wikipedia. 
 
-<img title="Main Gage" src="images/screen/wiki-1.png" style="width:350px;display:block; margin-left: auto; margin-right: auto">
+<img title="Main Gage" src="images/screen/wiki.jpg">
 
 ## :memo: Содержание:
 
