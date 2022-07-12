@@ -60,3 +60,9 @@ tasks.withType(Test) {
         }
     }
 }
+
+task wikipedia(type: Test) {
+    useJUnitPlatform {
+        includeTags 'wikipedia'
+    }
+}
