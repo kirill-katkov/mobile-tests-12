@@ -93,39 +93,39 @@ public class AndroidHomework extends TestBase {
     void onboardingTest() {
 
         step("Check the onboarding first screen", () -> {
-            $(MobileBy.id("org.wikipedia.alpha:id/primaryTextView")).shouldHave(text("The Free Encyclopedia …in over 300 languages"));
-            $(MobileBy.id("org.wikipedia.alpha:id/secondaryTextView")).shouldHave(text("We’ve found the following on your device:"));
+            $(AppiumBy.id("org.wikipedia.alpha:id/primaryTextView")).shouldHave(text("The Free Encyclopedia …in over 300 languages"));
+            $(AppiumBy.id("org.wikipedia.alpha:id/secondaryTextView")).shouldHave(text("We’ve found the following on your device:"));
         });
 
         step("Moving to the second screen", () -> {
-            $(MobileBy.xpath("//android.widget.LinearLayout/android.widget.LinearLayout[2]")).click();
+            $(AppiumBy.xpath("//android.widget.LinearLayout/android.widget.LinearLayout[2]")).click();
         });
 
         step("Check the onboarding second screen", () -> {
-            $(MobileBy.id("org.wikipedia.alpha:id/primaryTextView")).shouldHave(text("New ways to explore"));
-            $(MobileBy.id("org.wikipedia.alpha:id/secondaryTextView")).shouldHave(text("Dive down the Wikipedia rabbit hole with " +
+            $(AppiumBy.id("org.wikipedia.alpha:id/primaryTextView")).shouldHave(text("New ways to explore"));
+            $(AppiumBy.id("org.wikipedia.alpha:id/secondaryTextView")).shouldHave(text("Dive down the Wikipedia rabbit hole with " +
                     "a constantly updating Explore feed. Customize the feed to your interests – whether it’s learning about historical " +
                     "events On this day, or rolling the dice with Random."));
         });
 
         step("Moving to the third screen", () -> {
-            $(MobileBy.xpath("//android.widget.LinearLayout/android.widget.LinearLayout[3]")).click();
+            $(AppiumBy.xpath("//android.widget.LinearLayout/android.widget.LinearLayout[3]")).click();
         });
 
         step("Check the onboarding third screen", () -> {
-            $(MobileBy.id("org.wikipedia.alpha:id/primaryTextView")).shouldHave(text("Reading lists with sync"));
-            $(MobileBy.id("org.wikipedia.alpha:id/secondaryTextView")).shouldHave(text("You can make reading lists from " +
+            $(AppiumBy.id("org.wikipedia.alpha:id/primaryTextView")).shouldHave(text("Reading lists with sync"));
+            $(AppiumBy.id("org.wikipedia.alpha:id/secondaryTextView")).shouldHave(text("You can make reading lists from " +
                     "articles you want to read later, even when you’re offline. Login to your Wikipedia account to sync your " +
                     "reading lists. Join Wikipedia"));
         });
 
         step("Moving to the fourth screen", () -> {
-            $(MobileBy.xpath("//android.widget.LinearLayout/android.widget.LinearLayout[4]")).click();
+            $(AppiumBy.xpath("//android.widget.LinearLayout/android.widget.LinearLayout[4]")).click();
         });
 
         step("Check the onboarding fourth screen", () -> {
-            $(MobileBy.id("org.wikipedia.alpha:id/primaryTextView")).shouldHave(text("Send anonymous data"));
-            $(MobileBy.id("org.wikipedia.alpha:id/secondaryTextView")).shouldHave(text("Help make the app better" +
+            $(AppiumBy.id("org.wikipedia.alpha:id/primaryTextView")).shouldHave(text("Send anonymous data"));
+            $(AppiumBy.id("org.wikipedia.alpha:id/secondaryTextView")).shouldHave(text("Help make the app better" +
                     " by letting us know how you use it. Data collected is anonymous. Learn more"));
         });
 
