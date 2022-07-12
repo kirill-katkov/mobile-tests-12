@@ -14,20 +14,20 @@ import static io.qameta.allure.Allure.step;
 
 public class WikipediaTests extends TestBase2 {
 
-    @Test
-    @Tag("wikipedia")
-    @DisplayName("Проверка поля ввода BrowserStack")
-    @Description("Проверка со значением BrowserStack")
-    void searchTestBrowserStack() {
-        back();
-        step("Type search", () -> {
-            $(AppiumBy.id("org.wikipedia.alpha:id/search_container")).click();
-            $(AppiumBy.id("org.wikipedia.alpha:id/search_src_text")).sendKeys("BrowserStack");
-        });
-        step("Verify content found", () ->
-                $$(AppiumBy.id("org.wikipedia.alpha:id/page_list_item_title"))
-                        .shouldHave(CollectionCondition.sizeGreaterThan(0)));
-    }
+//    @Test
+//    @Tag("wikipedia")
+//    @DisplayName("Проверка поля ввода BrowserStack")
+//    @Description("Проверка со значением BrowserStack")
+//    void searchTestBrowserStack() {
+//        back();
+//        step("Type search", () -> {
+//            $(AppiumBy.id("org.wikipedia.alpha:id/search_container")).click();
+//            $(AppiumBy.id("org.wikipedia.alpha:id/search_src_text")).sendKeys("BrowserStack");
+//        });
+//        step("Verify content found", () ->
+//                $$(AppiumBy.id("org.wikipedia.alpha:id/page_list_item_title"))
+//                        .shouldHave(CollectionCondition.sizeGreaterThan(0)));
+//    }
 
     @Tag("wikipedia")
     @Test
