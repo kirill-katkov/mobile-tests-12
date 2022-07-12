@@ -2,7 +2,7 @@ package tests;
 
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
-import drivers.BrowserstackMobileDriver;
+//import drivers.BrowserstackMobileDriver;
 import drivers.LocalMobileDriver;
 import helpers.Attach;
 import io.qameta.allure.selenide.AllureSelenide;
@@ -25,7 +25,7 @@ public class TestBase {
         if (Objects.equals(deviceHost, "local")) {
             Configuration.browser = LocalMobileDriver.class.getName();
         } else {
-            Configuration.browser = BrowserstackMobileDriver.class.getName();
+           // Configuration.browser = BrowserstackMobileDriver.class.getName();
         }
         Configuration.browserSize = null;
         System.out.println(deviceHost);
