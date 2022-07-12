@@ -12,7 +12,7 @@ import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.*;
 import static io.qameta.allure.Allure.step;
 
-public class WikipediaTests extends TestBase {
+public class WikipediaTests extends TestBase2 {
 
     @Test
     @Tag("wikipedia")
