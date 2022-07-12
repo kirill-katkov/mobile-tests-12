@@ -66,3 +66,9 @@ task android(type: Test) {
         includeTags 'android'
     }
 }
+
+task wikipedia(type: Test) {
+    useJUnitPlatform {
+        includeTags 'wikipedia'
+    }
+}

@@ -1,36 +1,21 @@
-package tests.local.android_tests;
+package tests;
+
 import com.codeborne.selenide.CollectionCondition;
-import com.codeborne.selenide.Condition;
-import io.appium.java_client.AppiumBy;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Tag;
-import org.junit.jupiter.api.Test;
-import tests.TestBase;
-
-
-import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Selenide.*;
-import static io.qameta.allure.Allure.step;
-
 import com.codeborne.selenide.Selenide;
-import io.appium.java_client.MobileBy;
+import io.appium.java_client.AppiumBy;
 import io.qameta.allure.Description;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
-import static com.codeborne.selenide.CollectionCondition.sizeGreaterThan;
 import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Condition.visible;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.$$;
+import static com.codeborne.selenide.Selenide.*;
 import static io.qameta.allure.Allure.step;
 
-public class AndroidHomework extends TestBase {
-
+public class WikipediaTests extends TestBase {
 
     @Test
-    @Tag("android")
+    @Tag("wikipedia")
     @DisplayName("Проверка поля ввода BrowserStack")
     @Description("Проверка со значением BrowserStack")
     void searchTestBrowserStack() {
@@ -44,10 +29,10 @@ public class AndroidHomework extends TestBase {
                         .shouldHave(CollectionCondition.sizeGreaterThan(0)));
     }
 
-    @Tag("android")
+    @Tag("wikipedia")
     @Test
-    @DisplayName("Проверка поля ввода BrowserStack")
-    @Description("Проверка со значением BrowserStack")
+    @DisplayName("Проверка поля ввода Microsoft и проверка Description")
+    @Description("Проверка со значением Microsoft")
     void searchTestMicrosoft() {
         String valueTitleCheck = "Microsoft";
         String valueDescriptionCheck = "American multinational technology corporation";
@@ -67,31 +52,8 @@ public class AndroidHomework extends TestBase {
         });
     }
 
-//    @Tag("android")
-//    @Test
-//    void testOnboarding(){
-//        $(AppiumBy.id("org.wikipedia.alpha:id/primaryTextView"))
-//                .shouldHave(text("The Free Encyclopedia …in over 300 languages"));
-//        $(AppiumBy.xpath("//android.widget.LinearLayout[2]")).click();
-//        $(AppiumBy.id("org.wikipedia.alpha:id/primaryTextView"))
-//                .shouldHave(text("New ways to explore"));
-//        $(AppiumBy.id("org.wikipedia.alpha:id/secondaryTextView"))
-//                .shouldHave(text("Dive down the Wikipedia rabbit hole with a constantly updating Explore feed. " +
-//                        "Customize the feed to your interests – whether it’s learning about historical events On this day, " +
-//                        "or rolling the dice with Random."));
-//        $(AppiumBy.xpath("//android.widget.LinearLayout[3]")).click();
-//        $(AppiumBy.id("org.wikipedia.alpha:id/primaryTextView"))
-//                .shouldHave(text("Reading lists with sync"));
-//        $(AppiumBy.xpath("//android.widget.LinearLayout[4]")).click();
-//        $(AppiumBy.id("org.wikipedia.alpha:id/primaryTextView"))
-//                .shouldHave(text("Send anonymous data"));
-//    }
-
-
-
-
     @Test
-    @Tag("android")
+    @Tag("wikipedia")
     @DisplayName("Проверка онбординга")
     @Description("Проверка перехода между экранами онбординга и текстов на экранах ")
     void onboardingTest() {
@@ -137,7 +99,7 @@ public class AndroidHomework extends TestBase {
 
 
     @Test
-    @Tag("android")
+    @Tag("wikipedia")
     @DisplayName("Проверка текста на стартовом экране")
     @Description("Проверка текста на стартовом экране. Экран после онбординга")
     void checkTextStartScreen() {
@@ -150,9 +112,8 @@ public class AndroidHomework extends TestBase {
         });
     }
 
-
     @Test
-    @Tag("android")
+    @Tag("wikipedia")
     @DisplayName("Проверка экрана Настроить ленту'")
     @Description("Проверка открытия экрана Настроить ленту и текста на нем")
     void searchScreenTape() {
@@ -169,49 +130,4 @@ public class AndroidHomework extends TestBase {
                     .shouldHave(text("Customize the feed"));
         });
     }
-
-//    @Test
-//    @Tag("android")
-//    @DisplayName("Проверка экрана перехода через tabbar'")
-//    @Description("Проверка перехода по таббару и текста на экранах ")
-//    void checkTabbar() {
-//        step("Skip onboarding", Selenide::back);
-//
-//        step("Moving to the Saved screen from tab bar", () -> {
-//            $(MobileBy.AccessibilityId("Saved")).click();
-//        });
-//
-//        step("Check text on screen", () -> {
-//            $(MobileBy.id("org.wikipedia.alpha:id/messageTitleView"))
-//                    .shouldHave(text("Sync reading lists"));
-//        });
-//
-//        step("Moving to the Search screen from tab bar", () -> {
-//            $(MobileBy.AccessibilityId("Search")).click();
-//        });
-//
-//        step("Check text on screen", () -> {
-//            $(MobileBy.id("org.wikipedia.alpha:id/history_title")).shouldHave(text("History"));
-//        });
-//
-//        step("Moving to the Edits screen from tab bar", () -> {
-//            $(MobileBy.AccessibilityId("Edits")).click();
-//        });
-//
-//        step("Check text on screen", () -> {
-//            $(MobileBy.id("org.wikipedia.alpha:id/messageTitleView")).shouldHave(text("Did you " +
-//                    "know that everyone can edit Wikipedia?"));
-//        });
-//
-//        step("Moving to the More screen from tab bar", () -> {
-//            $(MobileBy.AccessibilityId("More")).click();
-//        });
-//
-//        step("Check text on screen", () -> {
-//            $(MobileBy.id("org.wikipedia.alpha:id/main_drawer_account_container")).shouldHave(visible);
-//        });
-//
-//    }
-
-
 }
