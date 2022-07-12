@@ -8,17 +8,14 @@ repositories {
 }
 
 def allureVersion = "2.17.3",
-    selenideVersion = "5.25.0",
-//  selenideVersion = "6.5.2",
-    //appiumVersion = "8.0.0",
-    appiumVersion = "7.6.0",
+    selenideVersion = "6.5.2",
+    appiumVersion = "8.0.0",
+//    appiumVersion = "7.6.0",
     restAssured = "4.5.1",
     junitVersion = "5.8.2",
     slf4jVersion = "1.7.32",
-    ownerVersion = "1.0.12",
-        //ownerVersion = "1.0.4",
+    ownerVersion = "1.0.4",
         commonsIoVersion = "2.11.0"
-
 
 
 allure {
@@ -39,13 +36,13 @@ dependencies {
     testImplementation(
             "com.codeborne:selenide:$selenideVersion",
             "io.qameta.allure:allure-selenide:$allureVersion",
-            "org.junit.jupiter:junit-jupiter-api:$junitVersion",
-            "io.rest-assured:rest-assured:4.5.1",
-            "org.aeonbits.owner:owner:$ownerVersion",
-            "io.appium:java-client:$appiumVersion")
-    testRuntimeOnly(
+            "io.appium:java-client:$appiumVersion",
+            "io.rest-assured:rest-assured:$restAssured",
+            "org.junit.jupiter:junit-jupiter:$junitVersion",
             "org.slf4j:slf4j-simple:$slf4jVersion",
-            "org.junit.jupiter:junit-jupiter-engine:$junitVersion"
+            "org.aeonbits.owner:owner:$ownerVersion",
+            "commons-io:commons-io:$commonsIoVersion"
+
     )
 }
 
@@ -74,11 +71,5 @@ task android(type: Test) {
 task wikipedia(type: Test) {
     useJUnitPlatform {
         includeTags 'wikipedia'
-    }
-}
-
-task selenide_android_test(type: Test) {
-    useJUnitPlatform {
-        includeTags 'selenide'
     }
 }
