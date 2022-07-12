@@ -6,7 +6,7 @@
 
 - [Реализованные проверки](#boom-Реализованные-проверки)
 - [Технологии](#classical_building-Технологии)
-- [Сборка в Jenkins](#man_cook-Jenkins-job)
+- [Сборка в Jenkins](#electron-Сборка-в-Jenkins)
 - [Параметры запуска из jenkins](#electron-Параметры-запуска-из-jenkins)
 - [Запуск из терминала](#electron-Запуск-тестов-из-терминала)
 - [Allure отчет](#bar_chart-Allure-отчет)
@@ -37,7 +37,7 @@
 <img width="6%" title="Allure Report" src="images/logo/AllureTestOps.png">
 </p>
 
-## Сборка в Jenkins
+## :electron: Сборка в Jenkins
 <img src="images/logo/Jenkins.svg" width="25" height="25"  alt="Jenkins"/></a>  <a target="_blank" href="https://jenkins.autotests.cloud/job/wiki-mobile_tests_katkov/">Jenkins job</a>
 <p align="center">
 <a href="https://jenkins.autotests.cloud/job/wiki-mobile_tests_katkov/"><img src="images/screen/jenkins-1.png" alt="Jenkins"/></a>
