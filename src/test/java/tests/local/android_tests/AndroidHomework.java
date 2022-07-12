@@ -132,19 +132,19 @@ public class AndroidHomework extends TestBase {
     }
 
 
-    @Test
-    @Tag("android")
-    @DisplayName("Проверка текста на стартовом экране")
-    @Description("Проверка текста на стартовом экране. Экран после онбординга")
-    void checkTextStartScreen() {
-        step("Skip onboarding", Selenide::back);
-
-        step("check text", () -> {
-            $(AppiumBy.id("org.wikipedia.alpha:id/view_announcement_text"))
-                    .shouldHave(text("Customize your Explore feed You can now choose what to show on your feed," +
-                            " and also prioritize your favorite types of content."));
-        });
-    }
+//    @Test
+//    @Tag("android")
+//    @DisplayName("Проверка текста на стартовом экране")
+//    @Description("Проверка текста на стартовом экране. Экран после онбординга")
+//    void checkTextStartScreen() {
+//        step("Skip onboarding", Selenide::back);
+//
+//        step("check text", () -> {
+//            $(AppiumBy.id("org.wikipedia.alpha:id/view_announcement_text"))
+//                    .shouldHave(text("Customize your Explore feed You can now choose what to show on your feed," +
+//                            " and also prioritize your favorite types of content."));
+//        });
+//    }
 
 
     @Test
