@@ -63,25 +63,25 @@ public class AndroidHomework extends TestBase {
         });
     }
 
-    @Tag("android")
-    @Test
-    void testOnboarding(){
-        $(AppiumBy.id("org.wikipedia.alpha:id/primaryTextView"))
-                .shouldHave(text("The Free Encyclopedia …in over 300 languages"));
-        $(AppiumBy.xpath("//android.widget.LinearLayout[2]")).click();
-        $(AppiumBy.id("org.wikipedia.alpha:id/primaryTextView"))
-                .shouldHave(text("New ways to explore"));
-        $(AppiumBy.id("org.wikipedia.alpha:id/secondaryTextView"))
-                .shouldHave(text("Dive down the Wikipedia rabbit hole with a constantly updating Explore feed. " +
-                        "Customize the feed to your interests – whether it’s learning about historical events On this day, " +
-                        "or rolling the dice with Random."));
-        $(AppiumBy.xpath("//android.widget.LinearLayout[3]")).click();
-        $(AppiumBy.id("org.wikipedia.alpha:id/primaryTextView"))
-                .shouldHave(text("Reading lists with sync"));
-        $(AppiumBy.xpath("//android.widget.LinearLayout[4]")).click();
-        $(AppiumBy.id("org.wikipedia.alpha:id/primaryTextView"))
-                .shouldHave(text("Send anonymous data"));
-    }
+//    @Tag("android")
+//    @Test
+//    void testOnboarding(){
+//        $(AppiumBy.id("org.wikipedia.alpha:id/primaryTextView"))
+//                .shouldHave(text("The Free Encyclopedia …in over 300 languages"));
+//        $(AppiumBy.xpath("//android.widget.LinearLayout[2]")).click();
+//        $(AppiumBy.id("org.wikipedia.alpha:id/primaryTextView"))
+//                .shouldHave(text("New ways to explore"));
+//        $(AppiumBy.id("org.wikipedia.alpha:id/secondaryTextView"))
+//                .shouldHave(text("Dive down the Wikipedia rabbit hole with a constantly updating Explore feed. " +
+//                        "Customize the feed to your interests – whether it’s learning about historical events On this day, " +
+//                        "or rolling the dice with Random."));
+//        $(AppiumBy.xpath("//android.widget.LinearLayout[3]")).click();
+//        $(AppiumBy.id("org.wikipedia.alpha:id/primaryTextView"))
+//                .shouldHave(text("Reading lists with sync"));
+//        $(AppiumBy.xpath("//android.widget.LinearLayout[4]")).click();
+//        $(AppiumBy.id("org.wikipedia.alpha:id/primaryTextView"))
+//                .shouldHave(text("Send anonymous data"));
+//    }
 
 
 
@@ -140,7 +140,7 @@ public class AndroidHomework extends TestBase {
         step("Skip onboarding", Selenide::back);
 
         step("check text", () -> {
-            $(MobileBy.id("org.wikipedia.alpha:id/view_announcement_text"))
+            $(AppiumBy.id("org.wikipedia.alpha:id/view_announcement_text"))
                     .shouldHave(text("Customize your Explore feed You can now choose what to show on your feed," +
                             " and also prioritize your favorite types of content."));
         });
@@ -156,58 +156,58 @@ public class AndroidHomework extends TestBase {
         step("Skip onboarding", Selenide::back);
 
         step("Moving to screen", () -> {
-            $(MobileBy.id("org.wikipedia.alpha:id/view_announcement_action_positive")).click();
+            $(AppiumBy.id("org.wikipedia.alpha:id/view_announcement_action_positive")).click();
         });
 
         step("Check text", () -> {
-            $(MobileBy.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout"
+            $(AppiumBy.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout"
                     + "/android.view.ViewGroup/android.widget.FrameLayout[1]/android.view.ViewGroup/android.widget.TextView"))
                     .shouldHave(text("Customize the feed"));
         });
     }
 
-    @Test
-    @Tag("android")
-    @DisplayName("Проверка экрана перехода через tabbar'")
-    @Description("Проверка перехода по таббару и текста на экранах ")
-    void checkTabbar() {
-        step("Skip onboarding", Selenide::back);
-
-        step("Moving to the Saved screen from tab bar", () -> {
-            $(MobileBy.AccessibilityId("Saved")).click();
-        });
-
-        step("Check text on screen", () -> {
-            $(MobileBy.id("org.wikipedia.alpha:id/messageTitleView"))
-                    .shouldHave(text("Sync reading lists"));
-        });
-
-        step("Moving to the Search screen from tab bar", () -> {
-            $(MobileBy.AccessibilityId("Search")).click();
-        });
-
-        step("Check text on screen", () -> {
-            $(MobileBy.id("org.wikipedia.alpha:id/history_title")).shouldHave(text("History"));
-        });
-
-        step("Moving to the Edits screen from tab bar", () -> {
-            $(MobileBy.AccessibilityId("Edits")).click();
-        });
-
-        step("Check text on screen", () -> {
-            $(MobileBy.id("org.wikipedia.alpha:id/messageTitleView")).shouldHave(text("Did you " +
-                    "know that everyone can edit Wikipedia?"));
-        });
-
-        step("Moving to the More screen from tab bar", () -> {
-            $(MobileBy.AccessibilityId("More")).click();
-        });
-
-        step("Check text on screen", () -> {
-            $(MobileBy.id("org.wikipedia.alpha:id/main_drawer_account_container")).shouldHave(visible);
-        });
-
-    }
+//    @Test
+//    @Tag("android")
+//    @DisplayName("Проверка экрана перехода через tabbar'")
+//    @Description("Проверка перехода по таббару и текста на экранах ")
+//    void checkTabbar() {
+//        step("Skip onboarding", Selenide::back);
+//
+//        step("Moving to the Saved screen from tab bar", () -> {
+//            $(MobileBy.AccessibilityId("Saved")).click();
+//        });
+//
+//        step("Check text on screen", () -> {
+//            $(MobileBy.id("org.wikipedia.alpha:id/messageTitleView"))
+//                    .shouldHave(text("Sync reading lists"));
+//        });
+//
+//        step("Moving to the Search screen from tab bar", () -> {
+//            $(MobileBy.AccessibilityId("Search")).click();
+//        });
+//
+//        step("Check text on screen", () -> {
+//            $(MobileBy.id("org.wikipedia.alpha:id/history_title")).shouldHave(text("History"));
+//        });
+//
+//        step("Moving to the Edits screen from tab bar", () -> {
+//            $(MobileBy.AccessibilityId("Edits")).click();
+//        });
+//
+//        step("Check text on screen", () -> {
+//            $(MobileBy.id("org.wikipedia.alpha:id/messageTitleView")).shouldHave(text("Did you " +
+//                    "know that everyone can edit Wikipedia?"));
+//        });
+//
+//        step("Moving to the More screen from tab bar", () -> {
+//            $(MobileBy.AccessibilityId("More")).click();
+//        });
+//
+//        step("Check text on screen", () -> {
+//            $(MobileBy.id("org.wikipedia.alpha:id/main_drawer_account_container")).shouldHave(visible);
+//        });
+//
+//    }
 
 
 }
