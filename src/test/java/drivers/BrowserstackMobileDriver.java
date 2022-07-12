@@ -6,12 +6,10 @@ import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.MutableCapabilities;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
-import org.openqa.selenium.remote.http.ClientConfig;
 import owner.StackOwner;
 
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.time.Duration;
 
 public class BrowserstackMobileDriver implements WebDriverProvider {
     static StackOwner configBrowserStack = ConfigFactory.create(StackOwner.class);
@@ -32,14 +30,7 @@ public class BrowserstackMobileDriver implements WebDriverProvider {
         mutableCapabilities.setCapability("project", configBrowserStack.project());
         mutableCapabilities.setCapability("build", configBrowserStack.build());
         mutableCapabilities.setCapability("name", configBrowserStack.name());
-
-        ClientConfig config = ClientConfig.defaultConfig().readTimeout(Duration.ofMinutes(20));
-
-
-        WebDriver remoteWebDriver = RemoteWebDriver.builder().oneOf(mutableCapabilities).address(getBrowserstackUrl()).config(config).build(); // now you can use this remoteWebDriver.
-        //return new RemoteWebDriver(getBrowserstackUrl(), mutableCapabilities);
-
-        return remoteWebDriver;
+        return new RemoteWebDriver(getBrowserstackUrl(), mutableCapabilities);
     }
 
     public static URL getBrowserstackUrl() {
