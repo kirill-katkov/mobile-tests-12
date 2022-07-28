@@ -13,7 +13,6 @@ import static com.codeborne.selenide.Selenide.*;
 import static io.qameta.allure.Allure.step;
 
 public class WikipediaTests extends TestBase {
-
     @Test
     @Tag("wikipedia")
     @DisplayName("Проверка поля ввода BrowserStack")
@@ -48,7 +47,6 @@ public class WikipediaTests extends TestBase {
                     .shouldHave(text(valueTitleCheck));
             $(AppiumBy.id("org.wikipedia.alpha:id/page_list_item_description"))
                     .shouldHave(text(valueDescriptionCheck));
-
         });
     }
 
@@ -56,7 +54,7 @@ public class WikipediaTests extends TestBase {
     @Tag("wikipedia")
     @DisplayName("Проверка онбординга")
     @Description("Проверка перехода между экранами онбординга и текстов на экранах ")
-    void testOnboarding(){
+    void testOnboarding() {
         $(AppiumBy.id("org.wikipedia.alpha:id/primaryTextView"))
                 .shouldHave(text("The Free Encyclopedia …in over 300 languages"));
         $(AppiumBy.xpath("//android.widget.LinearLayout[2]")).click();
@@ -81,7 +79,6 @@ public class WikipediaTests extends TestBase {
     @Description("Проверка текста на стартовом экране. Экран после онбординга")
     void checkTextStartScreen() {
         step("Skip onboarding", Selenide::back);
-
         step("check text", () -> {
             $(AppiumBy.id("org.wikipedia.alpha:id/view_announcement_text"))
                     .shouldHave(text("Customize your Explore feed You can now choose what to show on your feed," +
@@ -94,13 +91,10 @@ public class WikipediaTests extends TestBase {
     @DisplayName("Проверка экрана Настроить ленту'")
     @Description("Проверка открытия экрана Настроить ленту и текста на нем")
     void searchScreenTape() {
-
         step("Skip onboarding", Selenide::back);
-
         step("Moving to screen", () -> {
             $(AppiumBy.id("org.wikipedia.alpha:id/view_announcement_action_positive")).click();
         });
-
         step("Check text", () -> {
             $(AppiumBy.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout"
                     + "/android.view.ViewGroup/android.widget.FrameLayout[1]/android.view.ViewGroup/android.widget.TextView"))

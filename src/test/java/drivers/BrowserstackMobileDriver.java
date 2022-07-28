@@ -1,18 +1,27 @@
 package drivers;
 
 import com.codeborne.selenide.WebDriverProvider;
+import config.StackInterface;
 import org.aeonbits.owner.ConfigFactory;
 import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.MutableCapabilities;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
-import owner.StackOwner;
 
 import java.net.MalformedURLException;
 import java.net.URL;
 
 public class BrowserstackMobileDriver implements WebDriverProvider {
-    static StackOwner configBrowserStack = ConfigFactory.create(StackOwner.class);
+    static StackInterface configBrowserStack = ConfigFactory.create(StackInterface.class);
+
+    public static URL getBrowserstackUrl() {
+        try {
+            return new URL(configBrowserStack.bsUrl());
+        } catch (MalformedURLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
     @Override
     public WebDriver createDriver(Capabilities capabilities) {
         MutableCapabilities mutableCapabilities = new MutableCapabilities();
@@ -31,13 +40,5 @@ public class BrowserstackMobileDriver implements WebDriverProvider {
         mutableCapabilities.setCapability("build", configBrowserStack.build());
         mutableCapabilities.setCapability("name", configBrowserStack.name());
         return new RemoteWebDriver(getBrowserstackUrl(), mutableCapabilities);
-    }
-
-    public static URL getBrowserstackUrl() {
-        try {
-            return new URL(configBrowserStack.bsUrl());
-        } catch (MalformedURLException e) {
-            throw new RuntimeException(e);
-        }
     }
 }

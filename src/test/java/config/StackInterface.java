@@ -1,4 +1,4 @@
-package owner;
+package config;
 
 import org.aeonbits.owner.Config;
 
@@ -8,7 +8,7 @@ import org.aeonbits.owner.Config;
         "classpath:properties/stack.properties"
 })
 
-public interface StackOwner extends Config {
+public interface StackInterface extends Config {
     String username();
     String access_key();
     String project();
@@ -18,5 +18,4 @@ public interface StackOwner extends Config {
     String device();
     String osVersion();
     String bsUrl();
-
 }

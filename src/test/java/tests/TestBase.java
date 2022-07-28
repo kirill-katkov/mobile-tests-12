@@ -21,7 +21,6 @@ public class TestBase {
     static String deviceHost = System.getProperty("deviceHost", "local");
     @BeforeAll
     public static void setup() {
-
         if (Objects.equals(deviceHost, "local")) {
             Configuration.browser = LocalMobileDriver.class.getName();
         } else {
@@ -40,10 +39,8 @@ public class TestBase {
     @AfterEach
     public void afterEach() {
         String sessionId = sessionId();
-
         Attach.screenshotAs("Last screenshot");
         Attach.pageSource();
-
         step("Close driver", Selenide::closeWebDriver);
         if (Objects.equals(deviceHost, "browserstack")) {
             Attach.video(sessionId);
